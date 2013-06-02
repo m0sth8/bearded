@@ -1,0 +1,9 @@
+# Attantion, do not change this file
+
+
+if [ $TERM != "screen" ]; then
+  ( (tmux has-session -t bearded_web && tmux attach-session -t bearded_web) || (tmux new-session -s bearded_web) ) && exit 0
+  echo "tmux failed to start"
+fi
+
+source ~/venv/bearded_web/bin/activate

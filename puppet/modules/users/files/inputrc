@@ -1,0 +1,11 @@
+$include /etc/inputrc
+
+set show-all-if-ambiguous on
+set visible-stats on
+
+# pgup/pgdown history
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+
+# f1 for `man` on current command
+"\eOP": "\C-e \C-a\e[1;5C\C-k\C-aman \C-e\n\e[A\C-y\b\C-a\e[1;5C\e[C\C-u\C-e"

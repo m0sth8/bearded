@@ -1,0 +1,4 @@
+if [ "$SHLVL" = 1 ]; then
+        [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
+        echo -ne "\033]0;Terminal\007";
+fi
