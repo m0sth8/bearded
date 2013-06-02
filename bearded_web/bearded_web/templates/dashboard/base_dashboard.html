@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block js %}
+
+{# Application #}
+<script src="{% static "js/bearded.js" %}"></script>
+<script src="{% static "js/components/dashboard.js" %}"></script>
+<script src="{% static "js/components/appController.js" %}"></script>
+<script src="{% static "js/components/csrf.js" %}"></script>
+<script src="{% static "js/components/progressbar.js" %}"></script>
+
+{# Targets #}
+<script src="{% static "js/target/target.app.js" %}"></script>
+<script src="{% static "js/target/target.models.js" %}"></script>
+<script src="{% static "js/target/target.views.js" %}"></script>
+<script src="{% static "js/target/target.router.js" %}"></script>
+
+{# Tools #}
+
+<script src="{% static "js/tool/tool.models.js" %}"></script>
+
+{# Plugins #}
+
+<script src="{% static "js/plugin/plugin.app.js" %}"></script>
+<script src="{% static "js/plugin/plugin.models.js" %}"></script>
+
+
+{# Templates #}
+<script src="{% static "js/template/template.app.js" %}"></script>
+<script src="{% static "js/template/template.models.js" %}"></script>
+<script src="{% static "js/template/template.views.js" %}"></script>
+<script src="{% static "js/template/template.edit.tools.js" %}"></script>
+<script src="{% static "js/template/template.edit.flow.js" %}"></script>
+<script src="{% static "js/template/template.edit.js" %}"></script>
+<script src="{% static "js/template/template.router.js" %}"></script>
+
+<script type="text/javascript">
+
+    $(function(){
+        var options = {
+            "dashboard": [
+            {% for dashboard_menu in dashboard_menus %}
+                {
+                "url": "{{ dashboard_menu.url }}",
+                "appName": "{{ dashboard_menu.appName }}",
+                "title": "{{ dashboard_menu.title }}"
+                },
+            {% endfor %}
+            ]
+{#            ,#}
+{#            "toolPlugins": {{ tool_plugins|safe }}#}
+        };
+        Bearded.start(options);
+ 	});
+
+</script>
+
+{% endblock %}
+
+{% block js_template %}
+
+{# Target templates #}
+
+
+{% include 'inc/target.html' %}
+
+{# Template templates #}
+
+{% include 'inc/templates.html' %}
+
+{% include 'inc/templates-edit.html' %}
+
+{# Tools templates #}
+{% include 'inc/templates-tools.html' %}
+
+{# Dashboard #}
+
+{% include 'inc/dashboard.html' %}
+
+{# Common #}
+
+{% include 'inc/common.html' %}
+
+
+{% endblock %}
+
+{% block content %}
+    <p></p>
+    <div class="dashboard">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container" id="dashboard-menu">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dashboard-main">
+        {% block dashboard_body %}
+            Loading....
+        {% endblock %}
+    </div>
+
+{% endblock %}

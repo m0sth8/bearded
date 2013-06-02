@@ -1,0 +1,22 @@
+{% load i18n %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>{% trans 'Date' %}</th>
+            <th>{% trans 'Scan type' %}</th>
+            <th>{% trans 'Status' %}</th>
+{#            <th>{% trans 'Report' %}</th>#}
+        </tr>
+    </thead>
+    <tbody>
+    {% for scan in scans %}
+        <tr>
+            <td><a href="{{ scan.get_absolute_url }}">{{ scan.created }}</a></td>
+            <td>Wordpress Scan</td>
+            <td>{{ scan.get_status_display }}</td>
+{#            <td>{{ scan.report }}</td>#}
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>

@@ -1,0 +1,33 @@
+{% extends 'servers/base_server.html' %}
+{% load i18n %}
+
+{% block js %}
+
+<script type="text/javascript">
+
+    function update_stdout(){
+        jQuery.getJSON('{% url 'servers:scan' server_id=server.id scan_id=scan.id %}', function(data){
+            $('#stdout').html(data['stdout_colored']);
+        });
+        setTimeout(function() {update_stdout()}, 3000);
+    }
+
+    $(document).ready(function(){
+        setTimeout(function() {update_stdout()}, 3000);
+    });
+
+</script>
+
+
+{% endblock %}
+
+{% block server_body %}
+
+    <h4>Scan: {{ scan }}. Report</h4>
+
+    <div class="well" id="stdout">
+        {{ scan.stdout_colored|safe }}
+    </div>
+
+
+{% endblock %}

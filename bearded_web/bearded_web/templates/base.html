@@ -1,0 +1,127 @@
+{% load url from future %}
+{% load static %}
+<!DOCTYPE html>
+{% load bootstrap_toolkit %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Secure testing {% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/default.css" %}">
+
+    <style type="text/css">
+        body {
+{#            padding-top: 60px;#}
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">Автобородач</a>
+            <ul class="nav">
+{#                <li><a href="{% url pagination %}">Pagination</a></li>#}
+
+
+            </ul>
+            <ul class="nav pull-right">
+                {% if user.is_authenticated %}
+                    <li class="navbar-text">Welcome {{ user }} </li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="{% url 'logout' %}" class="">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}" class="">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    {% bootstrap_messages %}
+
+    {% block content %}Empty page{% endblock %}
+
+
+{#    <p><br></p>#}
+{#    <p><br></p>#}
+
+
+
+</div> <!-- container -->
+
+{# Temporary footer #}
+<div class="container">
+
+<div class="row-fluid">
+  <div class="span4">
+    <h2>First time here?</h2>
+    <p>Start your work with our <a href="#">1-2-3 Wizard</a></p>
+  </div>
+
+  <div class="span4">
+    <h2>Questions?</h2>
+    <p>Just open <a href="#">FAQ</a> or read more on the <a href="#">Wiki page</a></p>
+  </div>
+  <div class="span4">
+    <h2>Suggestions?</h2>
+    <p>We are open for new ideas. Contact with us on <a href="#">this page</a></p>
+ </div>
+</div>
+
+
+<footer class="row">
+    <div class="span6">
+        <p></p>
+    </div>
+    <div class="span6" style="text-align:right">
+        <p>
+            &copy; <a href="#">Company</a> 2013
+        </p>
+    </div>
+</footer>
+</div>
+
+
+{# JS world #}
+
+{# You should include your templates here #}
+
+{% block js_template %}
+
+{% endblock %}
+
+{# Vendor libraries #}
+<script src="{% static "js/libs/jquery/jquery.js" %}"></script>
+<script src="{% static "bootstrap/js/bootstrap.js" %}"></script>
+<script src="{% static "js/libs/underscore/underscore.js" %}"></script>
+<script src="{% static "js/libs/backbone/backbone.js" %}"></script>
+<script src="{% static "js/libs/backbone/backbone.marionette.js" %}"></script>
+<script src="{% static "js/libs/backbone/backbone.tastypie.js" %}"></script>
+<script src="{% static "js/libs/backbone/backbone.routefilter.js" %}"></script>
+<script src="{% static "js/libs/backbone/backbone.bootstrap-modal.js" %}"></script>
+<script src="{% static "js/libs/backbone/backbone-relational.js" %}"></script>
+<script src="{% static "js/libs/bootstrap/bootstrap-progressbar.js" %}"></script>
+
+<script src="{% static "js/libs/jquery/jquery.drag-drop.plugin.js" %}"></script>
+
+
+{# You should include your libraries here #}
+{% block js %}
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<script type="text/html" id="template-template-layout">
+    <div id="template-list-view"></div>
+    <div id="template-actions"></div>
+</script>
+
+<script type="text/html" id="template-template-actions">
+    <button class="btn btn-primary" id="new-template-action" type="button"><i class="icon-plus-sign"></i> New template</button>
+</script>
+
+<script type="text/html" id="template-template-item">
+    <td><a href=""><%=template.name %></a></td>
+    <td>
+        Nmap, Nessus
+    </td>
+    <td>
+        <form method="POST" action="" class="form form-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-small">Scan</button>
+        </form>
+    </td>
+</script>
+
+
+<script type="text/html" id="template-template-list">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Scanners</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</script>

@@ -1,0 +1,39 @@
+<script type="text/html" id="template-template-edit-layout">
+    <h2>New template</h2>
+    <div class="well well-large">
+        <div id="flow-region">
+
+        </div>
+    </div>
+    <div id="elements-region" class="template-elements"></div>
+</script>
+
+<script type="text/html" id='template-elements-layout'>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#tools" data-toggle="tab">Tools</a></li>
+      <li><a href="#plugins" data-toggle="tab">Plugins</a></li>
+      <li><a href="#templates" data-toggle="tab">templates</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id='tools'>tools</div>
+        <div class="tab-pane" id='plugins'>plugins</div>
+        <div class="tab-pane" id='templates'>templates</div>
+    </div>
+</script>
+
+
+<script type="text/html" id="template-flow-item">
+    <button class="btn"><%=plugin.name %></button>
+</script>
+
+
+<script type="text/html" id="template-flow-layout">
+    <div class="serial-region tool-items">
+
+    </div>
+    <div class="clearfix"></div>
+</script>
+
+<script type="text/html" id="template-tool-settings">
+    ФОРМА и соджерание
+</script>

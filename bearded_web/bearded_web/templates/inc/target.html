@@ -1,0 +1,56 @@
+<script type="text/html" id="template-target-layout">
+    <div id="target-actions">actions</div>
+    <div id="target-list-view"></div>
+</script>
+
+<script type="text/html" id="template-target-item">
+        <td><%=target.name %></td>
+        <td>
+            <div id="target-progressbar"></div>
+        </td>
+        <td>
+            <form method="POST" action="" class="form form-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-small">Scan</button>
+            </form>
+        </td>
+</script>
+
+<script type="text/html" id="template-target-list">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Target name</th>
+            <th>Information</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</script>
+
+<script type="text/html" id="template-target-actions">
+    <form class="form-horizontal">
+        <button class="btn btn-primary" id="new-target-action" type="button"><i class="icon-plus-sign"></i> New target</button>
+    </form>
+</script>
+
+<script type="text/html" id="template-target-new">
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="targetName">Target Name</label>
+            <div class="controls">
+                <input type="text" name="targetName" placeholder="New target" class="input-xlarge2">
+                <span class="help-inline"></span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="targetDomain">Domain</label>
+            <div class="controls">
+                <input type="text" name="targetDomain" placeholder="example.com" class="input-xlarge2">
+                <span class="help-inline"></span>
+            </div>
+        </div>
+    </form>
+</script>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>IP or Domain</th>
+            <th>Last scan</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{% url 'servers:server' server_id=server.pk %}">{{ server.host }}</a></td>
+                <td>
+                {% with server.get_last_scan as last_scan %}
+                {% if last_scan %}
+                    {{ last_scan.created }} — <a href="{{ last_scan.get_absolute_url }}">WordPress scan</a>
+                {% endif %}
+                {% endwith %}
+                </td>
+                <td>
+                    <form method="POST" action="{% url "servers:scans" server_id=server.pk %}" class="form form-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-small">Scan</button>
+                    </form>
+                </td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+    {% block server_body %}
+
+    {% endblock %}
+
+{% endblock %}
