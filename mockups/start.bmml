@@ -1,0 +1,39 @@
+<mockup version="1.0" skin="sketch" measuredW="1295" measuredH="818" mockupW="1222" mockupH="794">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="73" y="24" w="1222" h="794" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::MenuBar" x="73" y="93" w="1209" h="34" measuredW="367" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%2C%20History%2C%20Profile%2C%20Whats%20new%2C%20Bye%20PRO</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="375" y="424" w="424" h="-1" measuredW="370" measuredH="60" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <size>40</size>
+        <text>http%3A//example.com</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="814" y="426" w="177" h="60" measuredW="113" measuredH="48" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>32</size>
+        <text>Check</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Canvas" x="365" y="368" w="641" h="139" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+        <color>15658734</color>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="375" y="393" w="-1" h="-1" measuredW="350" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>14</size>
+        <text>Enter%20sitename%20that%20you%20want%20to%20check%20for%20security</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
